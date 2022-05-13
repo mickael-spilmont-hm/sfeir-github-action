@@ -1,4 +1,4 @@
-name: npm test
+name: npm matrix
 on:
   workflow_dispatch:
 
