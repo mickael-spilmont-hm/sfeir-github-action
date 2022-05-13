@@ -1,0 +1,23 @@
+name: npm test
+on:
+  workflow_dispatch:
+
+jobs:
+  run-npm-install:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, ubuntu-18.04]
+        node_version: [14, lts]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+      - name : setup node
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node_version }}
+      - name: run install
+        shell: bash
+        run: |
+          npm install
+          npm test
