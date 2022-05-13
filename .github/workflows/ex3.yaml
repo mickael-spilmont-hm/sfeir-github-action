@@ -1,24 +1,12 @@
-name: Switch Node version
+name: interact with Github API
 on:
   pull_request:
-
-env:
-  NODE_VERSION: 14
 
 jobs:
   run-npm-test:
     runs-on: ubuntu-latest
     steps:
-        - name: checkout
-          uses: actions/checkout@v2
-        - name : setup node
-          uses: actions/setup-node@v2
-          with:
-            node-version: ${{ env.NODE_VERSION }}
-        - name: run test
-          shell: bash
-          run: |
-            npm install
-            npm test
-        - name: Check node version
-          run: node -v
+      - name: Set SHA7 variable
+        run: echo "SHA_7=${GITHUB_SHA::7}" >> $GITHUB_ENV
+      - name: Controle variable
+        run: echo $SHA_7
