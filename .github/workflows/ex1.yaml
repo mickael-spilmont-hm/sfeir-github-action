@@ -3,14 +3,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  runs-on: ubuntu-latest
+  install-setup:
+    runs-on: ubuntu-latest
     steps:
       - name: Clonning repo on the VM
         uses: actions/checkout@v3
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-verion: 'latest'
+          node-verion: latest
       - name: Install npm
         run: npm i
 
