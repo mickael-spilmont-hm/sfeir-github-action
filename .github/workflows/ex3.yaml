@@ -10,3 +10,10 @@ jobs:
         run: echo "SHA_7=${GITHUB_SHA::7}" >> $GITHUB_ENV
       - name: Controle variable
         run: echo $SHA_7
+      - name: Create an issue
+        run: |
+          curl \
+            -X POST \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/mickael-spilmont-hm/sfeir-github-action/issues
+            -d '{"title":"$SHA_7","body":"Test issue","assignees":["Mickael"],"milestone":1,"labels":["bug"]}'
