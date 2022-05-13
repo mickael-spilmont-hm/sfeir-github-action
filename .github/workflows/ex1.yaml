@@ -10,5 +10,6 @@ jobs:
 
   check-node-version:
     runs-on: ubuntu-latest
+    steps:
       - name: Check Node version
         run: node -v
