@@ -12,6 +12,8 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-verion: latest
+      - name: Init NPM
+        run: npm init
       - name: Install npm
         run: npm i
   run-tests:
