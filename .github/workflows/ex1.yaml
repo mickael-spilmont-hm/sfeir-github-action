@@ -4,7 +4,7 @@ on:
 
 jobs:
   call-test-workflow:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Call test workflow
         run: mickael-spilmont-hm/sfeir-github-action/.github/workflows/ex4.yaml@main
