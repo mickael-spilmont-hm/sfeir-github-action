@@ -9,6 +9,7 @@ jobs:
         node_version: '14'
 
   check-node-version:
+    need: call-test-workflow
     runs-on: ubuntu-latest
     steps:
       - name: Check Node version
