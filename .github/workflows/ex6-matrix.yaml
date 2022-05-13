@@ -8,6 +8,9 @@ jobs:
       matrix:
         os: [ubuntu-latest, ubuntu-18.04]
         node_version: [14, lts/*]
+        include:
+          - os: ubuntu-latest
+          node_version: 12
     runs-on: ${{ matrix.os }}
     steps:
       - name: checkout
