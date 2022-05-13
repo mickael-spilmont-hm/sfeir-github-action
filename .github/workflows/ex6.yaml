@@ -16,12 +16,10 @@ jobs:
           shell: bash
           run: |
             npm install
-        - name: Cache node_modules
-          uses: actions/cache@v3
+        - uses: actions/cache@v3
           with:
-            id: cache-node-module
             path: ~/.node_modules
-            key: node_modules_${{ steps.date.outputs.date }}
+            key: node_modules_${{ hashFiles('**/lockfiles') }}
 
   run-npm-test:
     runs-on: ubuntu-latest
