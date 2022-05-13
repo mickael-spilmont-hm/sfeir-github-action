@@ -12,13 +12,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-verion: latest
-      - name: Init NPM
-        run: npm init
       - name: Install npm
-        run: npm i
-  run-tests:
-    needs: install-setup
-    runs-on: ubuntu-latest
-    steps:
-      - name: Launch test
-        run: npm test
+        run: |
+          npm i
+          npm test
