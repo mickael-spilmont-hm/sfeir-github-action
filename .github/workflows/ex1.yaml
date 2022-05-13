@@ -10,7 +10,7 @@ jobs:
       - name: Install NodeJS
         uses: actions/setup-node@v3
         with:
-          node-verion: latest
+          node-verion: 'latest'
       - name: Install npm
         run: npm i
 
