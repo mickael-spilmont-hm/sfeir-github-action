@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Call test workflow
-        run: mickael-spilmont-hm/sfeir-github-action/.github/workflows/ex4.yaml@main
+        uses: mickael-spilmont-hm/sfeir-github-action/.github/workflows/ex4.yaml@main
         with:
           node_version: '14'
       - name: Check Node version
