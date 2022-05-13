@@ -3,16 +3,10 @@ on:
   workflow_dispatch:
 
 jobs:
-  install-setup:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Clonning repo on the VM
-        uses: actions/checkout@v3
-      - name: Install NodeJS
-        uses: actions/setup-node@v3
-        with:
-          node-verion: latest
-      - name: Install npm
-        run: |
-          npm i
-          npm test
+  call-test-workflow:
+    - name: Call test workflow
+      run: mickael-spilmont-hm/sfeir-github-action/.github/workflows/ex4.yaml@main
+      with:
+        node_version: '14'
+    - name: Check Node version
+      run: node -v
